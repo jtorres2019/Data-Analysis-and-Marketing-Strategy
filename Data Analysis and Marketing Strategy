@@ -1,0 +1,69 @@
+-- SQL script for Data Analysis and Marketing Strategy
+
+-- Description: Conducted data analysis and developed marketing strategies for Atlantic Training.
+
+-- Create a table to store customer data
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(20),
+    Age INT,
+    City VARCHAR(50),
+    State VARCHAR(2),
+    Country VARCHAR(50)
+);
+
+-- Insert sample customer data
+INSERT INTO Customers (CustomerID, FirstName, LastName, Email, Phone, Age, City, State, Country)
+VALUES
+    (1, 'John', 'Doe', 'johndoe@email.com', '+1-123-456-7890', 35, 'New York', 'NY', 'USA'),
+    (2, 'Jane', 'Smith', 'janesmith@email.com', '+1-987-654-3210', 28, 'Los Angeles', 'CA', 'USA'),
+    (3, 'Michael', 'Johnson', 'michael@email.com', '+1-555-555-5555', 42, 'Chicago', 'IL', 'USA'),
+    (4, 'Emily', 'Davis', 'emily@email.com', '+1-777-777-7777', 55, 'Houston', 'TX', 'USA'),
+    (5, 'Sarah', 'Wilson', 'sarah@email.com', '+1-888-888-8888', 30, 'Miami', 'FL', 'USA');
+
+-- Create a table to store product sales data
+CREATE TABLE ProductSales (
+    SaleID INT PRIMARY KEY,
+    CustomerID INT,
+    ProductName VARCHAR(100),
+    SaleDate DATE,
+    SaleAmount DECIMAL(10, 2)
+);
+
+-- Insert sample product sales data
+INSERT INTO ProductSales (SaleID, CustomerID, ProductName, SaleDate, SaleAmount)
+VALUES
+    (1, 1, 'Product A', '2023-01-15', 100.00),
+    (2, 2, 'Product B', '2023-01-16', 150.00),
+    (3, 3, 'Product A', '2023-01-18', 100.00),
+    (4, 4, 'Product C', '2023-01-20', 200.00),
+    (5, 5, 'Product B', '2023-01-22', 150.00);
+
+-- Create a table to store marketing campaign data
+CREATE TABLE MarketingCampaigns (
+    CampaignID INT PRIMARY KEY,
+    CampaignName VARCHAR(100),
+    CampaignType VARCHAR(50),
+    StartDate DATE,
+    EndDate DATE,
+    Budget DECIMAL(10, 2)
+);
+
+-- Insert sample marketing campaign data
+INSERT INTO MarketingCampaigns (CampaignID, CampaignName, CampaignType, StartDate, EndDate, Budget)
+VALUES
+    (1, 'Campaign X', 'Online', '2023-01-10', '2023-01-31', 5000.00),
+    (2, 'Campaign Y', 'Social Media', '2023-02-01', '2023-02-28', 3000.00),
+    (3, 'Campaign Z', 'Email Marketing', '2023-03-05', '2023-03-31', 2500.00);
+
+-- Display customer data
+SELECT * FROM Customers;
+
+-- Display product sales data
+SELECT * FROM ProductSales;
+
+-- Display marketing campaign data
+SELECT * FROM MarketingCampaigns;
